@@ -1,4 +1,4 @@
-package com.maintenance.user.domain.model;
+package com.maintenance.user.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

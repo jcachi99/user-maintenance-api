@@ -1,7 +1,7 @@
 package com.maintenance.user;
 
 import com.maintenance.user.controller.UserController;
-import com.maintenance.user.domain.model.User;
+import com.maintenance.user.model.User;
 import com.maintenance.user.service.impl.UserService;
 import org.junit.Assert;
 import org.junit.Before;

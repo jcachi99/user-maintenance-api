@@ -1,7 +1,7 @@
 package com.maintenance.user.service.impl;
 
 import com.maintenance.user.repository.UserRepository;
-import com.maintenance.user.domain.model.User;
+import com.maintenance.user.model.User;
 import com.maintenance.user.service.IUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import static com.maintenance.user.util.Constants.EMAIL_DUPLICATED;
 
