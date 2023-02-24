@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "/api/user/v1")
@@ -33,5 +34,10 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody @Valid User user){
         return ResponseEntity.ok(userService.save(user));
+    }
+
+    @PutMapping("/{userId}")
+    public ResponseEntity<?> update(@PathVariable UUID userId, @RequestBody User user){
+        return ResponseEntity.ok(userService.update(userId, user));
     }
 }

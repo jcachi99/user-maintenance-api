@@ -1,5 +1,6 @@
 package com.maintenance.user.service.impl;
 
+import com.maintenance.user.exception.ResourceNotFoundException;
 import com.maintenance.user.repository.UserRepository;
 import com.maintenance.user.model.User;
 import com.maintenance.user.service.IUser;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import static com.maintenance.user.util.Constants.EMAIL_DUPLICATED;
 
@@ -41,10 +43,27 @@ public class UserService implements IUser {
         try {
             user.setActive(Boolean.TRUE);
             user.setCreated_at(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            user.setLast_login(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+            user.setToken(UUID.randomUUID().toString());
             return userRepository.save(user);
         } catch (Exception e){
             throw new ExpressionException(EMAIL_DUPLICATED,e.getMessage());
         }
+    }
+
+    @Override
+    public User update(UUID userId, User user) {
+        User existingClient = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("No se encontró el usuario"));
+        existingClient.setName(user.getName());
+        existingClient.getPhones().removeAll(existingClient.getPhones());
+        existingClient.getPhones().addAll(user.getPhones());
+        existingClient.setEmail(user.getEmail());
+        existingClient.setPassword(user.getPassword());
+        existingClient.setActive(user.getActive());
+        existingClient.setToken(user.getToken());
+        existingClient.setUpdated_at(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        existingClient.setLast_login(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        return userRepository.save(existingClient);
     }
 
 }
