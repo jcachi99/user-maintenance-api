@@ -15,7 +15,7 @@ Java 8
   * JDBC url: jdbc:h2:mem:maintenancedb
   * User Name: h2
   * Password: h2
-  
+* Ruta de diagrama: src/main/resources/diagram/UserRegisterDiagram.png
   
 ## Importante
 
