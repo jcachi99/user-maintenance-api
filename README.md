@@ -20,8 +20,8 @@ Java 8
 ## Seguridad
 
 * Autenticación básica para todos los endpoints (Basic Auth)
- * Username: admin
- * Password: admin
+  * Username: admin
+  * Password: admin
   
 ## Importante
 
