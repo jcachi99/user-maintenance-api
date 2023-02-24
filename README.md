@@ -23,6 +23,10 @@ Java 8
   * Username: admin
   * Password: admin
 * Mismas credenciales para autenticación en Swagger
+
+## Pruebas Unitarias
+
+* Test para probar el endpoint de listar usuarios con Junit y Mockito
   
 ## Importante
 
