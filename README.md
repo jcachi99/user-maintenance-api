@@ -16,6 +16,12 @@ Java 8
   * User Name: h2
   * Password: h2
 * Ruta de diagrama: src/main/resources/diagram/UserRegisterDiagram.png
+
+## Seguridad
+
+* Autenticación básica para todos los endpoints (Basic Auth)
+ * Username: admin
+ * Password: admin
   
 ## Importante
 
