@@ -38,6 +38,6 @@ Reglas colocadas para el campo password:
 * Al menos un número
 * Al menos un caracter especial
 
-## Author ✒️
+## Autor ✒️
 
 * **Jhonatan Cachi Arroyo**  - [jcachi99](https://github.com/jcachi99)
