@@ -31,7 +31,7 @@ public class UserController {
         return ResponseEntity.ok(list);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<?> create(@RequestBody @Valid User user){
         return ResponseEntity.ok(userService.save(user));
     }
